@@ -19,5 +19,25 @@ This plugin allows you to easily integrate [SWFUpload](http://swfupload.org/) to
 
 #### If you want modify swfupload form template then change `/app/views/shared/_swfupload_form.html.erb`. Keep only elements and their IDs. 
 
+## Server side
+#### You able access uploaded file from `params[:Filedata]` in your upload action.
+#### [Attachment_Fu](http://github.com/technoweenie/attachment_fu/tree/master) integration. Because flash send file data without correct type, you need set content type yourself using mime-types gem(`gem install mime-types`). For example:
+    require 'mime/types'
+    class Asset < ActiveRecord::Base
+      has_attachment 
+      
+      def swf_uploaded_data=(data)
+        data.content_type = MIME::Types.type_for(data.original_filename)
+        self.uploaded_data = data
+      end  
+    end
+    
+    class AssetsController < ApplicationController
+      def upload
+        @file = Asset.new :swf_uploaded_data => params[:Filedata]
+        @file.save
+        ...
+      end
+    end
     
 ###### Copyright (c) 2009 Alex Tretyakov, released under MIT license
