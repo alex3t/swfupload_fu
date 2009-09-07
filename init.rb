@@ -1,0 +1,1 @@
+require 'swfupload_fu'
