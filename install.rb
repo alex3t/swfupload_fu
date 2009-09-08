@@ -17,7 +17,7 @@ end
 
 
 puts "Copy started..."
-Swfupload::InstallHelpers::copy_files 'javascripts',["swfupload.js", "swfupload.fileprogress.js", "swfupload.handlers.js", "swfupload.queue.js", "swfupload-settings.js"]
+Swfupload::InstallHelpers::copy_files 'javascripts',["swfupload.js", "swfupload.fileprogress.js", "swfupload.handlers.js", "swfupload.queue.js"]
 Swfupload::InstallHelpers::copy_files 'stylesheets',["swfupload.css"]
 Swfupload::InstallHelpers::copy_files 'images',["FullyTransparent_65x29.png"]
 Swfupload::InstallHelpers::copy_files 'flash',["swfupload.swf"]
