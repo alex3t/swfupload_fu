@@ -23,7 +23,7 @@ Swfupload::InstallHelpers::copy_files 'stylesheets',["swfupload.css"]
 Swfupload::InstallHelpers::copy_files 'images',["FullyTransparent_65x29.png"]
 Swfupload::InstallHelpers::copy_files 'flash',["swfupload.swf"]
 Swfupload::InstallHelpers::copy_files 'app/views/shared',["_swfupload_form.html.erb"],''
-Swfupload::InstallHelpers::copy_files 'config/initializers',["session_flash_support.rb"],''
+Swfupload::InstallHelpers::copy_files 'config/initializers',["session_swf_support.rb"],''
 rescue Exception => e
 	puts "e=#{e}"
 end
