@@ -5,8 +5,8 @@ copy_files 'javascripts',["swfupload.js", "swfupload.fileprogress.js", "swfuploa
 copy_files 'stylesheets',["swfupload.css"]
 copy_files 'images',["FullyTransparent_65x29.png"]
 copy_files 'flash',["swfupload.swf"]
-copy_files 'app/views',["_swfupload_form.html.erb"],File.join('app','views','shared')
-copy_files 'config/initializers',["session_flash_support.rb"],File.join('config','initializers')
+#copy_files 'app/views',["_swfupload_form.html.erb"],File.join('app','views','shared')
+#copy_files 'config/initializers',["session_flash_support.rb"],File.join('config','initializers')
 
 puts "Files copied - Installation complete!"
 
@@ -18,5 +18,6 @@ def copy_files dir, files, rails_folder="public"
   	dest_file = File.join(dest_dir, js_file)
   	src_file = File.join(File.dirname(__FILE__) , dir, js_file)  	
   	FileUtils.cp_r(src_file, dest_file)
+	p "copy #{dest_file}"
   end  
 end
