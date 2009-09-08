@@ -17,12 +17,15 @@ end
 
 
 puts "Copy started..."
+begin
 Swfupload::InstallHelpers::copy_files 'javascripts',["swfupload.js", "swfupload.fileprogress.js", "swfupload.handlers.js", "swfupload.queue.js"]
 Swfupload::InstallHelpers::copy_files 'stylesheets',["swfupload.css"]
 Swfupload::InstallHelpers::copy_files 'images',["FullyTransparent_65x29.png"]
 Swfupload::InstallHelpers::copy_files 'flash',["swfupload.swf"]
 Swfupload::InstallHelpers::copy_files 'app/views',["_swfupload_form.html.erb"],File.join('app','views','shared')
 Swfupload::InstallHelpers::copy_files 'config/initializers',["session_flash_support.rb"],File.join('config','initializers')
-
+rescue Exception => e
+	puts "e=#{e}"
+end
 puts "Files copied - Installation complete!"
 
