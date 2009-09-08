@@ -1,7 +1,7 @@
 require 'fileutils'
 
 puts "Copy started..."
-#copy_files 'javascripts',["swfupload.js", "swfupload.fileprogress.js", "swfupload.handlers.js", "swfupload.queue.js", "swfupload-settings.js"]
+copy_files 'javascripts',["swfupload.js", "swfupload.fileprogress.js", "swfupload.handlers.js", "swfupload.queue.js", "swfupload-settings.js"]
 #copy_files 'stylesheets',["swfupload.css"]
 #copy_files 'images',["FullyTransparent_65x29.png"]
 #copy_files 'flash',["swfupload.swf"]
